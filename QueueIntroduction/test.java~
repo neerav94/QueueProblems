@@ -1,0 +1,74 @@
+import java.util.*;
+class queue
+{
+    int arr[];
+    int front, rear;
+    int auxilliary[];
+    public queue(int size)
+    {
+	arr = new int[size];
+        front = -1;
+	rear = -1;
+    }
+
+    public void insert(int element)
+    {
+	arr[++rear] = element;
+    }
+
+    public int delete()
+    {
+	return arr[++front];
+    }
+
+    public int getFront()
+    {
+	return front++;
+    }
+
+    public int getRear()
+    {
+	return rear;
+    }
+}
+
+public class largestMultipleOf3
+{
+    public static void main(String args[])
+    {
+	int array[] = {8, 1, 7, 6, 0};
+	//int auxilliary[] = new int[array.length];
+	int sum = 0;	
+	int size = array.length;
+	queue q0 = new queue(size);
+	queue q1 = new queue(size);
+	queue q2 = new queue(size);
+
+	Arrays.sort(array);
+	for(int i=0;i<size;i++)
+	{
+	    if(array[i]%3==0)
+		q0.insert(array[i]);
+	    if(array[i]%3==1)
+		q1.insert(array[i]);
+	    if(array[i]%3==2)
+		q2.insert(array[i]);
+	    sum+=array[i];
+	}
+        if(sum%3==0)
+	{
+	    int auxilliary = new int[size];
+	    //int front = q0.getFront();
+	    //int rear = q0.getRear();
+	    for(int i = q0.getFront();i <= q0.getRear();i++)
+		auxilliary[i] = q0.delete();
+	    for(int i = (q0.getRear()+1);i <= q1.getRear();i++)
+		auxilliary[i] = q1.delete();
+	    for(int i = (q1.getRear()+1);i <= q2.getRear();i++)
+		auxilliary[i] = q2.delete();
+	    Arrays.sort(auxilliary, Collections.reverseOrder());
+	    for(int i=0;i<auxilliary.length;i++)
+	        System.out.print(auxilliary[i]);
+	}
+    }
+}

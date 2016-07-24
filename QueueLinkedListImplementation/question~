@@ -1,0 +1,1 @@
+In this post we implement queue using linked list. If insert function is performed a new node is added and rear is shifted and if remove function is called the front pointer is shifted to the next node thus deleting the previous node.

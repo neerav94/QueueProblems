@@ -1,0 +1,4 @@
+Question: Given an array of non-negative integers. Find the largest multiple of 3 that can be formed from array elements.
+
+For example, if the input array is {8, 1, 9}, the output should be “9 8 1″, and if the input array is {8, 1, 7, 6, 0}, output should be 
+“8 7 6 0″.

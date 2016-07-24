@@ -1,0 +1,11 @@
+Step-1: Create 3 seperate queues.
+Step-2: if number%3==0 insert in q0
+	if number%3==1 insert in q1
+	if number%3==2 insert in q2
+Step-3: sum of all the array elements
+Step-4: if the sum of all the elements on dividing by 3 gives remainder as 1 than delete 1 element from q1 but if q1 is empty than delete 2 
+	elements from q2 and if q2 has has less than 2 elements than the number is not possible
+Step-5: if the sum of all the elements on dividing by 3 gives remainder as 2 than delete 1 element from q2 but if q2 is empty than delete 2 
+	elements from q1 and if q1 has has less than 2 elements than the number is not possible
+Step-6: now input all the elements from q0, q1 and q2 and insert them in an auxilliary array.
+Step-7: Sort the auxilliary array in decreasing order

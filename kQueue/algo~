@@ -1,0 +1,2 @@
+Create three arrays. One to store all the queue and other one to store the rear pointer of the queue's and one more to keep the record of front pointer which are inserted into the queue. The array arr[] is divided into slots n/k each with n being the size of the array and k being the number of queues i.e. arr[0] to arr[(n/k)-1] will represent the first queue, arr[(n/k)] to arr[(2n/k)-1] will represent the second queue and so on..
+

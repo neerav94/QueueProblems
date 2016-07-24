@@ -1,0 +1,89 @@
+/*Question and explanation:
+Queue(Introduction)
+Like Stack, Queue or First In First Out(FIFO) is a linear data type which has a collection of elements which performs the following basic operations:
+a) insert: inserts the element on the top of the queue. If the queue is full it is called an overflow condition.
+b) remove: removes the element from the queue which was inserted first of all. If the queue is empty it is called underflow condition.
+
+The basic difference between stack and queue is that stack removes the element which was last inserted in the stack while queue removes that element which was inserted first.
+The practical example of queue is the line of people waiting for ticket reservation at railway station. One who comes first will be given the ticket first.
+The following is the stack implementation using array.
+*/
+
+
+//Queue implementation in Java
+class queue
+{
+    protected int arr[];
+    protected int front, rear, size;
+
+    /*  Constructor for queue */
+    public queue(int n)
+    {
+        size = n;
+        arr = new int[size];
+        front = -1;
+	rear = -1;
+    }
+
+    /* method to check if the queue is empty*/
+    public boolean isEmpty()
+    {
+	if(front==-1 && rear==-1 || front>=rear)
+	    return true;
+	return false;
+    }
+
+    /* method to check if the queue is full*/
+    public boolean isFull()
+    {
+	if(front==0 && rear==(size-1))
+	    return true;
+	return false;
+    }
+
+    /* method to push the element in the queue */
+    public void insert(int element)
+    {
+	if(isFull())
+	{
+	    System.out.println("Queue is full");
+	    System.exit(0);
+	}
+	else
+	{
+	    rear++;
+	    arr[rear]=element;
+	    System.out.println(element+" is inserted to the queue");
+	}
+    }
+    /* method to remove the element from the queue */
+    public int remove()
+    {
+	if(isEmpty())
+	{
+	    System.out.println("Queue is empty");
+	    System.exit(0);
+	}
+	else
+	{
+	    front++;
+	    return arr[front];
+	}
+	return -1;
+    }
+}
+
+/*  Class queue implementation */
+public class queueDemo
+{
+    public static void main(String []args)
+    {
+        /* Creating object of class queue */
+        queue q = new queue(50);
+        q.insert(4);
+        q.insert(57);
+        q.insert(25);
+        int num = q.remove();
+        System.out.println(num+" is removed from queue");
+    }
+}

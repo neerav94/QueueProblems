@@ -1,0 +1,4 @@
+Step-1: Create a string queue and add 1 in the queue. That is the binary equivalent for 1. 
+Step-2: In the while loop which will run n times remove the front element and print it
+Step-3: Append 0 and 1 to the recently removed element from the queue and add both these numbers back to the queue
+Step-4: Goto step-2.
